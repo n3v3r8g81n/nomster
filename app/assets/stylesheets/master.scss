@@ -1,5 +1,10 @@
 @import "bootstrap";
 
+body{
+  background: image_url('dynamic-style.png');
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   paddig: 0;
@@ -15,4 +20,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 10px;
   margin-bottom: 15px;
   padding: 20px;
+}
+
+.navbar {
+  background: image_url('circuit');
+  box-shadow: 3px 3px 5px #ccc5b8;
 }

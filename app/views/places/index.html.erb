@@ -7,4 +7,6 @@
 
   <% end %>
 
-  <%= will_paginate @places , renderer: RemoteLinkPagination::LinkRenderer %>
+  <div class="row justify-content-md-center">
+    <%= will_paginate @places %>
+  </div>

@@ -24,8 +24,21 @@
           <% end %>
       </li>
     </ul>
+    <ul class="navbar-nav">
+      <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to 'A user is signed in', '#', class: 'nav-link' do %>
+        <i class="fa fa-smile-o"></i>
+        <% end %>
+      </li>
+      <% else %>
+      <li class='nav-item'>
+        <%= link_to 'No user is signed in :(', '#', class: 'nav-link' %>
+      </li>
+      <% end %>
+    </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <input class="form-control mr-sm-2" type="text" placeholder="Enter search phrase">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>

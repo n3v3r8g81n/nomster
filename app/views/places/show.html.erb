@@ -5,7 +5,8 @@
   <p><%= @place.description %></p>
 
 <div class="float-right">
-    <%=link_to "Edit this place", edit_place_path(@place), class: 'btn btn-primary' %>
+    <%= link_to "Edit this place", edit_place_path(@place), class: 'btn btn-primary' %>
+    <%= link_to 'Delete place', place_path(@place), method: :delete, data: {'You requested to delete this place. Please confirm.'}, class: 'btn btn-danger' %>
   </div>
 
 </div>

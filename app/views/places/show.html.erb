@@ -5,6 +5,8 @@
   <p><%= @place.description %></p>
 
   <div class="float-right">
+    <!-- added from lesson 25 -->
+    <% if current_user && current_user == @place.user %>
     <%= link_to "Edit this place", 
     edit_place_path(@place), 
     class: 'btn btn-primary' %>
@@ -14,6 +16,8 @@
     method: :delete, 
     data: {confirm: 'You requested to delete this place. Please confirm.'}, 
     class: 'btn btn-danger' %>
+        <% end %>
+
   </div>
 
 </div>

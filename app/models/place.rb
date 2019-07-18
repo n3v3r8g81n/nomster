@@ -1,5 +1,7 @@
 class Place < ApplicationRecord
 #  self.per_page = 3
   belongs_to :user
-  validates :name, presence: true
+  validates :name, presence: true, length: { minimum: 3 }
+  validates :address, presence: true
+  validates :description, presence: true
 end

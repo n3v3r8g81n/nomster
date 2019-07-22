@@ -26,7 +26,7 @@ class PlacesController < ApplicationController
 
     def edit
       @place = Place.find(params[:id])
-      if @place.user !=current_user
+      if @place.user != current_user
         return render plain: "You do not have permission to edit this place.", status: :forbidden
       end
     end

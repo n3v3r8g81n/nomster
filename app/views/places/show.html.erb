@@ -41,22 +41,27 @@
     data: {confirm: 'You requested to delete this place. Please confirm.'}, 
     class: 'btn btn-danger' %>
         <% end %>
-
+<p></p>
   </div>
 
 </div>
 
-<div class="clear"></div>
-<!-- moved below for lesson 36
-<%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
-  <%= f.input :message %>
-  <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
-  <%= f.submit "Add a comment", class: 'btn btn-primary' %>
-  <% end %>
--->
+ <!-- lesson 36 -->
+  <!-- Button trigger modal -->
+<!-- make button available only if user is logged in -->
 
-  <!-- used just for testing, until lesson 36
-  <h1>Comments</h1>
+<div class="col-10 offset-1">
+<% if current_user %>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Add a comment!
+</button>
+<% end %>
+<p></p>
+</div>
+<div class="clear"></div>
+
+<div class="booyah-box col-10 offset-1">
+<h1>Comments</h1>
   <% @place.comments.each do |comment| %>
   <div>
     <blockquote>
@@ -69,13 +74,16 @@
       </blockquote>
     </div>
     <% end %>
-  -->
+  </div>
 
-  <!-- lesson 36 -->
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Add a comment!
-</button>
+<div class="clear"></div>
+<!-- moved below for lesson 36
+<%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
+  <%= f.input :message %>
+  <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
+  <%= f.submit "Add a comment", class: 'btn btn-primary' %>
+  <% end %>
+-->
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

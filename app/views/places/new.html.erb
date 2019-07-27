@@ -5,7 +5,10 @@
     <%= f.input :address %>
     <%= f.input :description %>
     <br>
-        <%= f.submit 'Cancel', class: 'btn btn-primary' %>
+        <!-- removed because it threw an error. submit must be a db class
+            <%= f.submit 'Cancel', class: 'btn btn-primary' %> -->
+        <!-- added to make Cancel button return to root: -->
+        <%= link_to 'Cancel', root_path, class: 'btn btn-primary' %>
         <%= f.submit 'Add this place', class: 'btn btn-primary' %>
     <% end %>
     </div>

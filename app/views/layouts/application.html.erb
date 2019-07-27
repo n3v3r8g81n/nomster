@@ -18,11 +18,20 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-md-0">
       <li class="nav-item">
+        <!-- revised below to compare code
         <%= link_to new_place_path, class: 'nav-link nomster-nav-link' do %>
-          <i class="fa fa-plus-circle" ></i>&nbsp;Add a place
+        -->
+        <i class="fa fa-plus-circle" ></i><%= link_to 'Add a place', new_place_path, class: 'nav-link' %>
           <% end %>
       </li>
     </ul>
+    <!-- compare code above with lesson 15 following
+      <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+    <%= link_to 'New Place', new_place_path, class: 'nav-link' %>
+  </li>
+-->
     <ul class="navbar-nav">
       <% if user_signed_in? %>
       <li class="nav-item">

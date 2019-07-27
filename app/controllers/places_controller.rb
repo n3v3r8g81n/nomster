@@ -3,7 +3,7 @@ class PlacesController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
     def index
-      @places = Place.order(:id).paginate(:page => params[:page], :per_page =>3)
+      @places = Place.order(:id).paginate(:page => params[:page], :per_page =>10)
       end
 
     def new
@@ -12,7 +12,8 @@ class PlacesController < ApplicationController
 
     def create
       @place = current_user.places.create(place_params)
-      if @place.valid?
+      redirect_to root_path
+      if @place.valid?  
         redirect_to root_path
       else
         render :new, status: :unprocessable_entity
@@ -28,9 +29,8 @@ class PlacesController < ApplicationController
     def edit
       @place = Place.find(params[:id])
       if @place.user != current_user
-        return render plain: "You must sign in to edit this place.", status: :forbidden
+        return render plain: "Only the user who created this item can edit it.", status: :forbidden
       end
-      redirect_to root_path
     end
 
     def update
@@ -40,7 +40,7 @@ class PlacesController < ApplicationController
       end
       @place.update_attributes(place_params)
       if @place.valid?
-        redirect_to root_path
+         redirect_to root_path     
       else
         render :edit, status: unprocessable_entity
       end
@@ -52,9 +52,8 @@ class PlacesController < ApplicationController
       if @place.user != current_user
         return render plain: "Only the user who added this item can delete it.", status: :forbidden
       end
-        @place.destroy
+      @place.destroy
       redirect_to root_path
-
     end
 
     private

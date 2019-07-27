@@ -9,26 +9,19 @@
       <% end %>
       <p></p>
 
-<!-- copied from show.html. reflaced comment with place comments.last -->
+<!-- copied from show.html. replaced comment with place comments.last -->
       <% if place.comments.present? %>
       <div class="col-12"> 
         <blockquote>
           <% if place.comments.last.humanized_rating.present? %>
-           <b><%= place.comments.last.rating %></b> -
+           <b><%= place.comments.last.humanized_rating %></b> -
            <% end %>
             <%= place.comments.last.message %>
             <br>
             <small><%= place.comments.last.user.email %></small>
           </blockquote>
        </div>
+       <% end %>
       </div>
       <% end %>
   
- <!-- removed in lesson 37 
-  </div>
-
-  <% end %>
-
-  <div class="row justify-content-md-center">
-    <%= will_paginate @places %>
-  </div>

@@ -33,7 +33,7 @@ class PlacesController < ApplicationController
       redirect_to root_path
     end
 
-    def update!
+    def update
       @place = Place.find(params[:id])
       if @place.user != current_user
         return render plain: "Only the user who created this item can edit it.", status: :forbidden

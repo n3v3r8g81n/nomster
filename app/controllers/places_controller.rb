@@ -28,14 +28,15 @@ class PlacesController < ApplicationController
     def edit
       @place = Place.find(params[:id])
       if @place.user != current_user
-        return render plain: "You do not have permission to edit this place.", status: :forbidden
+        return render plain: "You must sign in to edit this place.", status: :forbidden
       end
+      redirect_to root_path
     end
 
     def update!
       @place = Place.find(params[:id])
       if @place.user != current_user
-        return render plain: "You do not have permission to edit this place.", status: :forbidden
+        return render plain: "Only the user who created this item can edit it.", status: :forbidden
       end
       @place.update_attributes(place_params)
       if @place.valid?
@@ -49,7 +50,7 @@ class PlacesController < ApplicationController
     def destroy
       @place = Place.find(params[:id])
       if @place.user != current_user
-        return render plain: "You do not have permission to edit this place.", status: :forbidden
+        return render plain: "Only the user who added this item can delete it.", status: :forbidden
       end
         @place.destroy
       redirect_to root_path

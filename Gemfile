@@ -71,6 +71,8 @@ gem 'devise'
 gem 'geocoder'
 # store api key locally, lesson 29
 gem 'figaro'
+# added for lesson 39
+gem 'carrierwave', '~> 1.0'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>=1.3.3'
 end

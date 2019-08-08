@@ -31,11 +31,15 @@
   <div class="float-right">
     <!-- added from lesson 25 -->
     <% if current_user && current_user == @place.user %>
+        <!-- 2019.08.07 added for lesson 39 -->
+        <%= link_to "Add a photo", "#", 
+        # edit_photo_path(@place),#
+          class: 'btn btn-warning' %>
     <%= link_to "Edit this place", 
     edit_place_path(@place), 
     class: 'btn btn-primary' %>
     <!-- added link for lesson 23 -->
-    <%= link_to 'Delete place', 
+    <%= link_to "Delete this place", 
     place_path(@place), 
     method: :delete, 
     data: {confirm: 'You requested to delete this place. Please confirm.'}, 
@@ -43,22 +47,32 @@
         <% end %>
 <p></p>
   </div>
-
+  <!-- 2019.08.07 move "Add a comment" button to map edge START -->
+  <div class="float-left">
+    <!-- added from lesson 25 -->
+    <% if current_user %>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+      Add a comment!
+      </button>
+    <% end %>
+  </div>
 </div>
+<div class="clear"></div>
 
  <!-- lesson 36 -->
   <!-- Button trigger modal -->
 <!-- make button available only if user is logged in -->
 
 <div class="col-10 offset-1">
+<!-- placed above 2019.08.07
 <% if current_user %>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
   Add a comment!
 </button>
 <% end %>
-<p></p>
+<p></p> -->
 <!-- lesson 37 separate the head from booyah box -->
-<h1 class="float-left">Comments</h1>
+<h2 class="float-left">Comments</h2>
 </div>
 <div class="clear"></div>
 
@@ -114,7 +128,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%= f.submit "Add comment", class: 'btn btn-primary' %>
+        <%= f.submit "Add comment", class: 'btn btn-success' %>
       </div>
         <% end %>
       </div>
@@ -133,40 +147,21 @@
     <div class="clear">
     <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
       <%= f.input :caption %>
-      <%= f.submit "Add a caption", class: 'btn btn-primary' %>
+      <%= f.submit "Submit a photo", class: 'btn btn-warning' %>
       <% end %>
-
-<!-- lesson 39: straight to modal 
-<div class="clear"></div>
-moved below for lesson 36
-<%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
-  <%= f.input :message %>
-  <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
-  <%= f.submit "Add a comment", class: 'btn btn-primary' %>
-  <% end %>
--->
-
-<!-- Modal al fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Add a comment!</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
-        <div class="modal-body">
-          <%= f.input :message %>
-          <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
-        </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%= f.submit "Add comment", class: 'btn btn-primary' %>
-      </div>
-        <% end %>
-      </div>
     </div>
-  </div>
--->
+
+<!-- 2019.08.07 lesson 39 -->
+<div class="col-10 offset-1">
+<h2 class="float-left">Photos</h2>
+</div>
+<div class="clear"></div>
+<div class="booyah-box col-10 offset-1">
+<div class="row">
+  <% @place.photos.each do |photo| %>
+  <div class="col-12 col-sm-6">
+        <h5><%= photo.caption %></h5>
+    </div>
+    <% end %>
+     </div>
+   </div>

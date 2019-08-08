@@ -147,6 +147,7 @@
     <div class="clear">
     <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
       <%= f.input :caption %>
+      <%= f.input :photo %>
       <%= f.submit "Submit a photo", class: 'btn btn-warning' %>
       <% end %>
     </div>
@@ -161,6 +162,7 @@
   <% @place.photos.each do |photo| %>
   <div class="col-12 col-sm-6">
         <h5><%= photo.caption %></h5>
+        <p><%= image_tag "photo.photo.url", class: "img_fluid" %></p>
     </div>
     <% end %>
      </div>

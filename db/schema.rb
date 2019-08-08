@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_165929) do
 
   create_table "photos", force: :cascade do |t|
     t.text "caption"
-    t.binary "photo"
+    t.string "photo"
     t.integer "user_id"
     t.integer "place_id"
     t.datetime "created_at", null: false

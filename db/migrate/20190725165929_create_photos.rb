@@ -2,7 +2,7 @@ class CreatePhotos < ActiveRecord::Migration[5.2]
   def change
     create_table :photos do |t|
       t.text :caption
-      t.binary :photo
+      t.string :photo
       t.integer :user_id
       t.integer :place_id
       t.timestamps

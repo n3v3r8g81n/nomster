@@ -26,6 +26,7 @@
     </script>
     <div id="map"></div>
   <% end %>
+</div>
 <br>
 
   <div class="float-right">
@@ -36,8 +37,9 @@
         <%= link_to "Edit this place", edit_place_path(@place), class: 'btn btn-primary' %>
         <%= link_to "Delete this place", place_path(@place), method: :delete, data: {confirm: 'You requested to delete this place. Please confirm.'}, class: 'btn btn-danger' %>
     <% end %>
-<p></p>
+    <p></p>
   </div>
+
   <div class="float-left">
     <!-- added from lesson 25 -->
     <% if current_user %>
@@ -46,9 +48,10 @@
       </button>
     <% end %>
   </div>
-</div>
+
 <div class="clear"></div>
 
+<!-- list of comments -->
 <div class="col-10 offset-1">
 <h2 class="float-left">Comments</h2>
 </div>
@@ -98,26 +101,53 @@
     </div>
   </div>
 
-    <div class="clear">
+      <!-- 2019.08.08 move to Photo Modal
     <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
       <%= f.input :caption %>
       <%= f.input :photo %>
       <%= f.submit "Add a photo", class: 'btn btn-warning' %>
-      <% end %>
+      <% end %> 
+      -->
+
+<!-- Photo Modal -->
+<div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Add a photo</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+        <div class="modal-body">
+          <%= f.input :caption %>
+          <%= f.input :photo %>
+        </div>
+      <%= f.submit "Add a photo", class: 'btn btn-warning' %>
+      <% end %> 
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= f.submit "Add photo", class: 'btn btn-success' %>
+      </div>
+        <% end %>
+      </div>
     </div>
+  </div>
 
 <!-- 2019.08.07 lesson 39 -->
 <div class="col-10 offset-1">
 <h2 class="float-left">Photos</h2>
 </div>
 <div class="clear"></div>
-<div class="booyah-box col-10 offset-1">
-<div class="row">
-  <% @place.photos.each do |photo| %>
-  <div class="col-12 col-sm-6">
+  <div class="booyah-box col-10 offset-1">
+    <div class="row">
+      <% @place.photos.each do |photo| %>
+      <div class="col-12 col-sm-6">
         <h5><%= photo.caption %></h5>
         <p><%= image_tag photo.photo.to_s, class: "img_fluid" %></p>
-    </div>
-    <% end %>
+      </div>
+      <% end %>
      </div>
    </div>

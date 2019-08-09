@@ -43,7 +43,7 @@
   <div class="float-left">
     <!-- added from lesson 25 -->
     <% if current_user %>
-      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#commentModal">
       Add a comment!
       </button>
     <% end %>
@@ -77,11 +77,11 @@
 <div class="clear"></div>
 
 <!-- Comment Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="myCommentModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Add a comment!</h4>
+        <h4 class="modal-title" id="myCommentModalLabel">Add a comment!</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -110,11 +110,11 @@
       -->
 
 <!-- Photo Modal -->
-<div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="myPhotoModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Add a photo</h4>
+        <h4 class="modal-title" id="myPhotoModalLabel">Add a photo</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

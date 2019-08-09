@@ -34,7 +34,8 @@
     <!-- added from lesson 25 -->
     <% if current_user && current_user == @place.user %>
         <!-- 2019.08.07 added for lesson 39 -->
-        <%= link_to "Add a photo", place_photos_path(@place), class: 'btn btn-warning' %>
+        <!-- replaced by button <%= link_to "Add a photo", place_photos_path(@place), class: 'btn btn-warning' %> -->
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#photoModal">Add a photo</button>
         <%= link_to "Edit this place", edit_place_path(@place), class: 'btn btn-primary' %>
         <%= link_to "Delete this place", place_path(@place), method: :delete, data: {confirm: 'You requested to delete this place. Please confirm.'}, class: 'btn btn-danger' %>
     <% end %>
@@ -126,11 +127,10 @@
           <%= f.input :caption %>
           <%= f.input :photo %>
         </div>
-      <%= f.submit "Add a photo", class: 'btn btn-warning' %>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%= f.submit "Add photo", class: 'btn btn-success' %>
+        <%= f.submit "Add photo", class: 'btn btn-warning' %>
       </div>
         <% end %>
       </div>

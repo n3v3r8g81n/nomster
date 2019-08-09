@@ -25,14 +25,9 @@
        <div class="clear"></div>
        <!-- 2019.08.09 added for lesson 39. place photos on index page as well. copied from comments above -->
        <% if place.photos.present? %>
-          <div class="col-12 col-sm-6">
-          <div class="row">
-            <% @place.photos.each do |photo| %>
-              <h5><%= photo.caption %></h5>
-              <p><%= image_tag photo.photo.to_s, class: "img_fluid" %></p>
-            <% end %>
+          <div class="photos-index float-right">
+              <p><%= image_tag place.photos.first.photo, class: "img_fluid" %></p>
           </div>
-          </div>
-      <% end %>
-    </div>
-<% end %>
+        <% end %>
+  </div>
+  <% end %>

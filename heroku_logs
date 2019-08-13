@@ -1,0 +1,100 @@
+2019-08-13T16:52:49.474128+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2019-08-13T16:52:49.474131+00:00 app[web.1]: pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+2019-08-13T16:52:49.474133+00:00 app[web.1]: c.collname, col_description(a.attrelid, a.attnum) AS comment
+2019-08-13T16:52:49.474134+00:00 app[web.1]: FROM pg_attribute a
+2019-08-13T16:52:49.474136+00:00 app[web.1]: LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2019-08-13T16:52:49.474139+00:00 app[web.1]: LEFT JOIN pg_type t ON a.atttypid = t.oid
+2019-08-13T16:52:49.474145+00:00 app[web.1]: LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+2019-08-13T16:52:49.474148+00:00 app[web.1]: WHERE a.attrelid = '"photos"'::regclass
+2019-08-13T16:52:49.474149+00:00 app[web.1]: AND a.attnum > 0 AND NOT a.attisdropped
+2019-08-13T16:52:49.474151+00:00 app[web.1]: ORDER BY a.attnum
+2019-08-13T16:52:49.474154+00:00 app[web.1]: ):
+2019-08-13T16:52:49.474495+00:00 app[web.1]: F, [2019-08-13T16:52:49.474421 #4] FATAL -- : [42a6c8e7-413f-486e-91d6-96ee92e01715]     24:        <% end %>
+2019-08-13T16:52:49.474497+00:00 app[web.1]: [42a6c8e7-413f-486e-91d6-96ee92e01715]     25:        <div class="clear"></div>
+2019-08-13T16:52:49.474499+00:00 app[web.1]: [42a6c8e7-413f-486e-91d6-96ee92e01715]     26:        <!-- 2019.08.09 added for lesson 39. place photos on index page as well. copied from comments above -->
+2019-08-13T16:52:49.474501+00:00 app[web.1]: [42a6c8e7-413f-486e-91d6-96ee92e01715]     27:        <% if place.photos.present? %>
+2019-08-13T16:52:49.474502+00:00 app[web.1]: [42a6c8e7-413f-486e-91d6-96ee92e01715]     28:           <div class="photos-index float-right">
+2019-08-13T16:52:49.474504+00:00 app[web.1]: [42a6c8e7-413f-486e-91d6-96ee92e01715]     29:               <p><%= image_tag place.photos.first.photo, class: "img_fluid" %></p>
+2019-08-13T16:52:49.474506+00:00 app[web.1]: [42a6c8e7-413f-486e-91d6-96ee92e01715]     30:           </div>
+2019-08-13T16:52:49.474563+00:00 app[web.1]: F, [2019-08-13T16:52:49.474499 #4] FATAL -- : [42a6c8e7-413f-486e-91d6-96ee92e01715]
+2019-08-13T16:52:49.474680+00:00 app[web.1]: F, [2019-08-13T16:52:49.474605 #4] FATAL -- : [42a6c8e7-413f-486e-91d6-96ee92e01715] app/views/places/index.html.erb:27:in `block in _app_views_places_index_html_erb___309648578102103963_47068950558320'
+2019-08-13T16:52:49.474683+00:00 app[web.1]: [42a6c8e7-413f-486e-91d6-96ee92e01715] app/views/places/index.html.erb:1:in `_app_views_places_index_html_erb___309648578102103963_47068950558320'
+2019-08-13T16:52:49.900601+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=nomster-laur-darmien.herokuapp.com request_id=81d60f97-9967-472f-bfe8-2c94fea03816 fwd="67.164.86.255" dyno=web.1 connect=1ms service=2ms status=200 bytes=143 protocol=https
+2019-08-13T16:52:53.986305+00:00 heroku[router]: at=info method=GET path="/" host=nomster-laur-darmien.herokuapp.com request_id=5a9c031d-feaa-46d7-b6de-e0d514d82c31 fwd="67.164.86.255" dyno=web.1 connect=1ms service=27ms status=500 bytes=1827 protocol=https
+2019-08-13T16:52:53.961224+00:00 app[web.1]: I, [2019-08-13T16:52:53.961116 #4]  INFO -- : [5a9c031d-feaa-46d7-b6de-e0d514d82c31] Started GET "/" for 67.164.86.255 at 2019-08-13 16:52:53 +0000
+2019-08-13T16:52:53.962009+00:00 app[web.1]: I, [2019-08-13T16:52:53.961933 #4]  INFO -- : [5a9c031d-feaa-46d7-b6de-e0d514d82c31] Processing by PlacesController#index as HTML
+2019-08-13T16:52:53.963048+00:00 app[web.1]: I, [2019-08-13T16:52:53.962980 #4]  INFO -- : [5a9c031d-feaa-46d7-b6de-e0d514d82c31]   Rendering places/index.html.erb within layouts/application
+2019-08-13T16:52:53.966489+00:00 app[web.1]: D, [2019-08-13T16:52:53.966414 #4] DEBUG -- : [5a9c031d-feaa-46d7-b6de-e0d514d82c31]   [1m[36mPlace Load (1.6ms)[0m  [1m[34mSELECT  "places".* FROM "places" ORDER BY "places"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+2019-08-13T16:52:53.969104+00:00 app[web.1]: D, [2019-08-13T16:52:53.969028 #4] DEBUG -- : [5a9c031d-feaa-46d7-b6de-e0d514d82c31]   [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."place_id" = $1[0m  [["place_id", 1]]
+2019-08-13T16:52:53.971592+00:00 app[web.1]: D, [2019-08-13T16:52:53.971520 #4] DEBUG -- : [5a9c031d-feaa-46d7-b6de-e0d514d82c31]   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+2019-08-13T16:52:53.977768+00:00 app[web.1]: I, [2019-08-13T16:52:53.977612 #4]  INFO -- : [5a9c031d-feaa-46d7-b6de-e0d514d82c31]   Rendered places/index.html.erb within layouts/application (14.5ms)
+2019-08-13T16:52:53.982380+00:00 app[web.1]: I, [2019-08-13T16:52:53.982220 #4]  INFO -- : [5a9c031d-feaa-46d7-b6de-e0d514d82c31] Completed 500 Internal Server Error in 20ms (ActiveRecord: 6.5ms)
+2019-08-13T16:52:53.984065+00:00 app[web.1]: F, [2019-08-13T16:52:53.983996 #4] FATAL -- : [5a9c031d-feaa-46d7-b6de-e0d514d82c31]
+2019-08-13T16:52:53.984521+00:00 app[web.1]: F, [2019-08-13T16:52:53.984441 #4] FATAL -- : [5a9c031d-feaa-46d7-b6de-e0d514d82c31] ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "photos" does not exist
+2019-08-13T16:52:53.984527+00:00 app[web.1]: LINE 8:                WHERE a.attrelid = '"photos"'::regclass
+2019-08-13T16:52:53.984530+00:00 app[web.1]: ^
+2019-08-13T16:52:53.984533+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2019-08-13T16:52:53.984535+00:00 app[web.1]: pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+2019-08-13T16:52:53.984537+00:00 app[web.1]: c.collname, col_description(a.attrelid, a.attnum) AS comment
+2019-08-13T16:52:53.984540+00:00 app[web.1]: FROM pg_attribute a
+2019-08-13T16:52:53.984542+00:00 app[web.1]: LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2019-08-13T16:52:53.984544+00:00 app[web.1]: LEFT JOIN pg_type t ON a.atttypid = t.oid
+2019-08-13T16:52:53.984547+00:00 app[web.1]: LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+2019-08-13T16:52:53.984549+00:00 app[web.1]: WHERE a.attrelid = '"photos"'::regclass
+2019-08-13T16:52:53.984551+00:00 app[web.1]: AND a.attnum > 0 AND NOT a.attisdropped
+2019-08-13T16:52:53.984553+00:00 app[web.1]: ORDER BY a.attnum
+2019-08-13T16:52:53.984555+00:00 app[web.1]: ):
+2019-08-13T16:52:53.984853+00:00 app[web.1]: F, [2019-08-13T16:52:53.984781 #4] FATAL -- : [5a9c031d-feaa-46d7-b6de-e0d514d82c31]     24:        <% end %>
+2019-08-13T16:52:53.984856+00:00 app[web.1]: [5a9c031d-feaa-46d7-b6de-e0d514d82c31]     25:        <div class="clear"></div>
+2019-08-13T16:52:53.984858+00:00 app[web.1]: [5a9c031d-feaa-46d7-b6de-e0d514d82c31]     26:        <!-- 2019.08.09 added for lesson 39. place photos on index page as well. copied from comments above -->
+2019-08-13T16:52:53.984861+00:00 app[web.1]: [5a9c031d-feaa-46d7-b6de-e0d514d82c31]     27:        <% if place.photos.present? %>
+2019-08-13T16:52:53.984863+00:00 app[web.1]: [5a9c031d-feaa-46d7-b6de-e0d514d82c31]     28:           <div class="photos-index float-right">
+2019-08-13T16:52:53.984865+00:00 app[web.1]: [5a9c031d-feaa-46d7-b6de-e0d514d82c31]     29:               <p><%= image_tag place.photos.first.photo, class: "img_fluid" %></p>
+2019-08-13T16:52:53.984867+00:00 app[web.1]: [5a9c031d-feaa-46d7-b6de-e0d514d82c31]     30:           </div>
+2019-08-13T16:52:53.984963+00:00 app[web.1]: F, [2019-08-13T16:52:53.984898 #4] FATAL -- : [5a9c031d-feaa-46d7-b6de-e0d514d82c31]
+2019-08-13T16:52:53.985063+00:00 app[web.1]: F, [2019-08-13T16:52:53.985002 #4] FATAL -- : [5a9c031d-feaa-46d7-b6de-e0d514d82c31] app/views/places/index.html.erb:27:in `block in _app_views_places_index_html_erb___309648578102103963_47068950558320'
+2019-08-13T16:52:53.985067+00:00 app[web.1]: [5a9c031d-feaa-46d7-b6de-e0d514d82c31] app/views/places/index.html.erb:1:in `_app_views_places_index_html_erb___309648578102103963_47068950558320'
+2019-08-13T16:52:54.308365+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=nomster-laur-darmien.herokuapp.com request_id=275fbf7f-4de1-423e-be11-a6206998778f fwd="67.164.86.255" dyno=web.1 connect=1ms service=11ms status=200 bytes=143 protocol=https
+2019-08-13T16:57:03.956996+00:00 heroku[router]: at=info method=GET path="/" host=nomster-laur-darmien.herokuapp.com request_id=10a59b6f-098a-4524-8846-1c8fcd10b4af fwd="67.164.86.255" dyno=web.1 connect=0ms service=24ms status=500 bytes=1827 protocol=https
+2019-08-13T16:57:03.934461+00:00 app[web.1]: I, [2019-08-13T16:57:03.934323 #4]  INFO -- : [10a59b6f-098a-4524-8846-1c8fcd10b4af] Started GET "/" for 67.164.86.255 at 2019-08-13 16:57:03 +0000
+2019-08-13T16:57:03.936063+00:00 app[web.1]: I, [2019-08-13T16:57:03.935980 #4]  INFO -- : [10a59b6f-098a-4524-8846-1c8fcd10b4af] Processing by PlacesController#index as HTML
+2019-08-13T16:57:03.938113+00:00 app[web.1]: I, [2019-08-13T16:57:03.938042 #4]  INFO -- : [10a59b6f-098a-4524-8846-1c8fcd10b4af]   Rendering places/index.html.erb within layouts/application
+2019-08-13T16:57:03.941854+00:00 app[web.1]: D, [2019-08-13T16:57:03.941756 #4] DEBUG -- : [10a59b6f-098a-4524-8846-1c8fcd10b4af]   [1m[36mPlace Load (1.4ms)[0m  [1m[34mSELECT  "places".* FROM "places" ORDER BY "places"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+2019-08-13T16:57:03.945674+00:00 app[web.1]: D, [2019-08-13T16:57:03.945599 #4] DEBUG -- : [10a59b6f-098a-4524-8846-1c8fcd10b4af]   [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."place_id" = $1[0m  [["place_id", 1]]
+2019-08-13T16:57:03.948437+00:00 app[web.1]: D, [2019-08-13T16:57:03.948365 #4] DEBUG -- : [10a59b6f-098a-4524-8846-1c8fcd10b4af]   [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+2019-08-13T16:57:03.952950+00:00 app[web.1]: I, [2019-08-13T16:57:03.952801 #4]  INFO -- : [10a59b6f-098a-4524-8846-1c8fcd10b4af]   Rendered places/index.html.erb within layouts/application (14.5ms)
+2019-08-13T16:57:03.953245+00:00 app[web.1]: I, [2019-08-13T16:57:03.953151 #4]  INFO -- : [10a59b6f-098a-4524-8846-1c8fcd10b4af] Completed 500 Internal Server Error in 17ms (ActiveRecord: 6.7ms)
+2019-08-13T16:57:03.955063+00:00 app[web.1]: F, [2019-08-13T16:57:03.954993 #4] FATAL -- : [10a59b6f-098a-4524-8846-1c8fcd10b4af]
+2019-08-13T16:57:03.955178+00:00 app[web.1]: F, [2019-08-13T16:57:03.955101 #4] FATAL -- : [10a59b6f-098a-4524-8846-1c8fcd10b4af] ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "photos" does not exist
+2019-08-13T16:57:03.955183+00:00 app[web.1]: LINE 8:                WHERE a.attrelid = '"photos"'::regclass
+2019-08-13T16:57:03.955186+00:00 app[web.1]: ^
+2019-08-13T16:57:03.955189+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2019-08-13T16:57:03.955191+00:00 app[web.1]: pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+2019-08-13T16:57:03.955193+00:00 app[web.1]: c.collname, col_description(a.attrelid, a.attnum) AS comment
+2019-08-13T16:57:03.955195+00:00 app[web.1]: FROM pg_attribute a
+2019-08-13T16:57:03.955197+00:00 app[web.1]: LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2019-08-13T16:57:03.955199+00:00 app[web.1]: LEFT JOIN pg_type t ON a.atttypid = t.oid
+2019-08-13T16:57:03.955202+00:00 app[web.1]: LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+2019-08-13T16:57:03.955204+00:00 app[web.1]: WHERE a.attrelid = '"photos"'::regclass
+2019-08-13T16:57:03.955206+00:00 app[web.1]: AND a.attnum > 0 AND NOT a.attisdropped
+2019-08-13T16:57:03.955208+00:00 app[web.1]: ORDER BY a.attnum
+2019-08-13T16:57:03.955211+00:00 app[web.1]: ):
+2019-08-13T16:57:03.955633+00:00 app[web.1]: F, [2019-08-13T16:57:03.955570 #4] FATAL -- : [10a59b6f-098a-4524-8846-1c8fcd10b4af]     24:        <% end %>
+2019-08-13T16:57:03.955637+00:00 app[web.1]: [10a59b6f-098a-4524-8846-1c8fcd10b4af]     25:        <div class="clear"></div>
+2019-08-13T16:57:03.955639+00:00 app[web.1]: [10a59b6f-098a-4524-8846-1c8fcd10b4af]     26:        <!-- 2019.08.09 added for lesson 39. place photos on index page as well. copied from comments above -->
+2019-08-13T16:57:03.955641+00:00 app[web.1]: [10a59b6f-098a-4524-8846-1c8fcd10b4af]     27:        <% if place.photos.present? %>
+2019-08-13T16:57:03.955643+00:00 app[web.1]: [10a59b6f-098a-4524-8846-1c8fcd10b4af]     28:           <div class="photos-index float-right">
+2019-08-13T16:57:03.955646+00:00 app[web.1]: [10a59b6f-098a-4524-8846-1c8fcd10b4af]     29:               <p><%= image_tag place.photos.first.photo, class: "img_fluid" %></p>
+2019-08-13T16:57:03.955648+00:00 app[web.1]: [10a59b6f-098a-4524-8846-1c8fcd10b4af]     30:           </div>
+2019-08-13T16:57:03.955739+00:00 app[web.1]: F, [2019-08-13T16:57:03.955677 #4] FATAL -- : [10a59b6f-098a-4524-8846-1c8fcd10b4af]
+2019-08-13T16:57:03.955858+00:00 app[web.1]: F, [2019-08-13T16:57:03.955795 #4] FATAL -- : [10a59b6f-098a-4524-8846-1c8fcd10b4af] app/views/places/index.html.erb:27:in `block in _app_views_places_index_html_erb___309648578102103963_47068950558320'
+2019-08-13T16:57:03.955861+00:00 app[web.1]: [10a59b6f-098a-4524-8846-1c8fcd10b4af] app/views/places/index.html.erb:1:in `_app_views_places_index_html_erb___309648578102103963_47068950558320'
+2019-08-13T16:57:04.082937+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=nomster-laur-darmien.herokuapp.com request_id=332d5568-dcd0-4313-b1b0-e028480ddbc6 fwd="67.164.86.255" dyno=web.1 connect=0ms service=1ms status=200 bytes=143 protocol=https
+2019-08-13T17:32:28.830871+00:00 heroku[web.1]: Idling
+2019-08-13T17:32:28.845867+00:00 heroku[web.1]: State changed from up to down
+2019-08-13T17:32:30.076895+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2019-08-13T17:32:30.099105+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2019-08-13T17:32:30.107919+00:00 app[web.1]: === puma shutdown: 2019-08-13 17:32:30 +0000 ===
+2019-08-13T17:32:30.108206+00:00 app[web.1]: - Goodbye!
+2019-08-13T17:32:30.108896+00:00 app[web.1]: Exiting
+2019-08-13T17:32:30.388425+00:00 heroku[web.1]: Process exited with status 143

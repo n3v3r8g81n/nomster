@@ -11,8 +11,8 @@
 
 <!-- copied from show.html. replaced comment with place comments.last -->
       <% if place.comments.present? %>
-      <div class="col-12"> 
-        <blockquote>
+          <div class="col-12">
+          <blockquote>
           <% if place.comments.last.humanized_rating.present? %>
            <b><%= place.comments.last.humanized_rating %></b> -
            <% end %>
@@ -20,14 +20,16 @@
             <br>
             <small><%= place.comments.last.user.email %></small>
           </blockquote>
-       </div>
-       <% end %>
-       <div class="clear"></div>
-       <!-- 2019.08.09 added for lesson 39. place photos on index page as well. copied from comments above -->
-       <% if place.photos.present? %>
-          <div class="photos-index float-right">
-              <p><%= image_tag place.photos.first.photo, class: "img_fluid" %></p>
           </div>
-        <% end %>
+       <% end %>
+
+      <% if place.photos.present? %>
+        <%= image_tag place.photos.last.photo.to_s, class: "img_fluid" %>
+        <%= place.photos.last.caption %>
+      <% end %>
+
   </div>
-  <% end %>
+<% end %>
+<div class="row justify-content-md-center">
+    <%= will_paginate @places %>
+  </div>

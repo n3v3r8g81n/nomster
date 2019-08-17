@@ -4,7 +4,17 @@ Rails.application.configure do
   # Add heroku url from lesson 15?
   config.action_mailer.default_url_options = { host: 'nomster-laur-darmien.herokuapp.com' }
 
-  # Code is not reloaded between requests.
+  ActionMailer::Base.smtp_settings = {
+  :user_name => ENV['SENDGRID_USERNAME'],
+  :password => ENV['SENDGRID_PASSWORD'],
+  :domain => 'yourdomain.com',
+  :address => 'smtp.sendgrid.net',
+  :port => 587,
+  :authentication => :plain,
+  :enable_starttls_auto => true
+}
+
+# Code is not reloaded between requests.
   config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and

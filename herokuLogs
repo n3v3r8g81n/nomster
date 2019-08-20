@@ -1,0 +1,100 @@
+2019-08-17T22:22:45.826981+00:00 app[web.1]: 
+2019-08-17T22:22:45.826983+00:00 app[web.1]: ----==_mimepart_5d587e34be259_42b1e2db507544446d
+2019-08-17T22:22:45.826986+00:00 app[web.1]: Content-Type: text/plain;
+2019-08-17T22:22:45.826988+00:00 app[web.1]: charset=UTF-8
+2019-08-17T22:22:45.826990+00:00 app[web.1]: Content-Transfer-Encoding: 7bit
+2019-08-17T22:22:45.826992+00:00 app[web.1]: 
+2019-08-17T22:22:45.826994+00:00 app[web.1]: Hello, Nomster user!
+2019-08-17T22:22:45.826996+00:00 app[web.1]: 
+2019-08-17T22:22:45.826998+00:00 app[web.1]: Congratulations! Someone added a comment to your place [name of place]. Have a look: http://nomster-laur-darmien.herokuapp.com/places/1
+2019-08-17T22:22:45.827000+00:00 app[web.1]: 
+2019-08-17T22:22:45.827002+00:00 app[web.1]: The Nomster team
+2019-08-17T22:22:45.827004+00:00 app[web.1]: 
+2019-08-17T22:22:45.827006+00:00 app[web.1]: 
+2019-08-17T22:22:45.827008+00:00 app[web.1]: 
+2019-08-17T22:22:45.827010+00:00 app[web.1]: ----==_mimepart_5d587e34be259_42b1e2db507544446d
+2019-08-17T22:22:45.827012+00:00 app[web.1]: Content-Type: text/html;
+2019-08-17T22:22:45.827013+00:00 app[web.1]: charset=UTF-8
+2019-08-17T22:22:45.827015+00:00 app[web.1]: Content-Transfer-Encoding: 7bit
+2019-08-17T22:22:45.827017+00:00 app[web.1]: 
+2019-08-17T22:22:45.827019+00:00 app[web.1]: <!DOCTYPE html>
+2019-08-17T22:22:45.827021+00:00 app[web.1]: <html>
+2019-08-17T22:22:45.827022+00:00 app[web.1]: <head>
+2019-08-17T22:22:45.827025+00:00 app[web.1]: <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+2019-08-17T22:22:45.827027+00:00 app[web.1]: <style>
+2019-08-17T22:22:45.827029+00:00 app[web.1]: /* Email styles need to be inline */
+2019-08-17T22:22:45.827031+00:00 app[web.1]: </style>
+2019-08-17T22:22:45.827032+00:00 app[web.1]: </head>
+2019-08-17T22:22:45.827034+00:00 app[web.1]: 
+2019-08-17T22:22:45.827036+00:00 app[web.1]: <body>
+2019-08-17T22:22:45.827038+00:00 app[web.1]: <p> Hello, Nomster user!</p>
+2019-08-17T22:22:45.827040+00:00 app[web.1]: <p>
+2019-08-17T22:22:45.827043+00:00 app[web.1]: Congratulations! Someone added a comment to [name of place]. Have a look: <a href="http://nomster-laur-darmien.herokuapp.com/places/1">here</a>.
+2019-08-17T22:22:45.827044+00:00 app[web.1]: </p>
+2019-08-17T22:22:45.827046+00:00 app[web.1]: 
+2019-08-17T22:22:45.827048+00:00 app[web.1]: <p>The Nomster team</p>
+2019-08-17T22:22:45.827050+00:00 app[web.1]: 
+2019-08-17T22:22:45.827052+00:00 app[web.1]: 
+2019-08-17T22:22:45.827054+00:00 app[web.1]: </body>
+2019-08-17T22:22:45.827056+00:00 app[web.1]: </html>
+2019-08-17T22:22:45.827058+00:00 app[web.1]: 
+2019-08-17T22:22:45.827060+00:00 app[web.1]: ----==_mimepart_5d587e34be259_42b1e2db507544446d--
+2019-08-17T22:22:45.827062+00:00 app[web.1]: 
+2019-08-17T22:22:45.830087+00:00 app[web.1]: D, [2019-08-17T22:22:45.829989 #4] DEBUG -- : [76040280-dfa7-4f4a-8186-9b0dbaebc3c2]   [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+2019-08-17T22:22:45.830666+00:00 app[web.1]: I, [2019-08-17T22:22:45.830596 #4]  INFO -- : [76040280-dfa7-4f4a-8186-9b0dbaebc3c2] Redirected to https://nomster-laur-darmien.herokuapp.com/places/1
+2019-08-17T22:22:45.831000+00:00 app[web.1]: I, [2019-08-17T22:22:45.830926 #4]  INFO -- : [76040280-dfa7-4f4a-8186-9b0dbaebc3c2] Completed 302 Found in 1089ms (ActiveRecord: 9.8ms)
+2019-08-17T22:22:46.318883+00:00 heroku[router]: at=info method=GET path="/places/1" host=nomster-laur-darmien.herokuapp.com request_id=59abbc89-5fb1-4c37-8840-a767cd204d69 fwd="67.164.86.255" dyno=web.1 connect=1ms service=46ms status=200 bytes=9651 protocol=https
+2019-08-17T22:22:46.275239+00:00 app[web.1]: I, [2019-08-17T22:22:46.275098 #4]  INFO -- : [59abbc89-5fb1-4c37-8840-a767cd204d69] Started GET "/places/1" for 67.164.86.255 at 2019-08-17 22:22:46 +0000
+2019-08-17T22:22:46.276676+00:00 app[web.1]: I, [2019-08-17T22:22:46.276599 #4]  INFO -- : [59abbc89-5fb1-4c37-8840-a767cd204d69] Processing by PlacesController#show as HTML
+2019-08-17T22:22:46.276794+00:00 app[web.1]: I, [2019-08-17T22:22:46.276727 #4]  INFO -- : [59abbc89-5fb1-4c37-8840-a767cd204d69]   Parameters: {"id"=>"1"}
+2019-08-17T22:22:46.281108+00:00 app[web.1]: D, [2019-08-17T22:22:46.281018 #4] DEBUG -- : [59abbc89-5fb1-4c37-8840-a767cd204d69]   [1m[36mPlace Load (1.3ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+2019-08-17T22:22:46.282734+00:00 app[web.1]: I, [2019-08-17T22:22:46.282660 #4]  INFO -- : [59abbc89-5fb1-4c37-8840-a767cd204d69]   Rendering places/show.html.erb within layouts/application
+2019-08-17T22:22:46.285443+00:00 app[web.1]: D, [2019-08-17T22:22:46.285364 #4] DEBUG -- : [59abbc89-5fb1-4c37-8840-a767cd204d69]   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+2019-08-17T22:22:46.287968+00:00 app[web.1]: D, [2019-08-17T22:22:46.287863 #4] DEBUG -- : [59abbc89-5fb1-4c37-8840-a767cd204d69]   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+2019-08-17T22:22:46.290546+00:00 app[web.1]: D, [2019-08-17T22:22:46.290467 #4] DEBUG -- : [59abbc89-5fb1-4c37-8840-a767cd204d69]   [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."place_id" = $1[0m  [["place_id", 1]]
+2019-08-17T22:22:46.293792+00:00 app[web.1]: D, [2019-08-17T22:22:46.293717 #4] DEBUG -- : [59abbc89-5fb1-4c37-8840-a767cd204d69]   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+2019-08-17T22:22:46.312595+00:00 app[web.1]: D, [2019-08-17T22:22:46.312410 #4] DEBUG -- : [59abbc89-5fb1-4c37-8840-a767cd204d69]   [1m[36mPhoto Load (1.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."place_id" = $1[0m  [["place_id", 1]]
+2019-08-17T22:22:46.312998+00:00 app[web.1]: I, [2019-08-17T22:22:46.312929 #4]  INFO -- : [59abbc89-5fb1-4c37-8840-a767cd204d69]   Rendered places/show.html.erb within layouts/application (30.1ms)
+2019-08-17T22:22:46.315027+00:00 app[web.1]: I, [2019-08-17T22:22:46.314955 #4]  INFO -- : [59abbc89-5fb1-4c37-8840-a767cd204d69] Completed 200 OK in 38ms (Views: 26.6ms | ActiveRecord: 7.4ms)
+2019-08-17T22:25:22.462465+00:00 heroku[router]: at=info method=GET path="/places/1/comments" host=nomster-laur-darmien.herokuapp.com request_id=ed328aab-4a75-4c69-ad61-c2d38f0c764b fwd="76.14.16.242" dyno=web.1 connect=0ms service=3ms status=404 bytes=1902 protocol=https
+2019-08-17T22:25:22.458396+00:00 app[web.1]: I, [2019-08-17T22:25:22.458289 #4]  INFO -- : [ed328aab-4a75-4c69-ad61-c2d38f0c764b] Started GET "/places/1/comments" for 76.14.16.242 at 2019-08-17 22:25:22 +0000
+2019-08-17T22:25:22.459042+00:00 app[web.1]: F, [2019-08-17T22:25:22.458972 #4] FATAL -- : [ed328aab-4a75-4c69-ad61-c2d38f0c764b]
+2019-08-17T22:25:22.459114+00:00 app[web.1]: F, [2019-08-17T22:25:22.459049 #4] FATAL -- : [ed328aab-4a75-4c69-ad61-c2d38f0c764b] ActionController::RoutingError (No route matches [GET] "/places/1/comments"):
+2019-08-17T22:25:22.459181+00:00 app[web.1]: F, [2019-08-17T22:25:22.459117 #4] FATAL -- : [ed328aab-4a75-4c69-ad61-c2d38f0c764b]
+2019-08-17T22:25:22.459272+00:00 app[web.1]: F, [2019-08-17T22:25:22.459207 #4] FATAL -- : [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+2019-08-17T22:25:22.459276+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+2019-08-17T22:25:22.459279+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:38:in `call_app'
+2019-08-17T22:25:22.459281+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `block in call'
+2019-08-17T22:25:22.459283+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+2019-08-17T22:25:22.459285+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:28:in `tagged'
+2019-08-17T22:25:22.459287+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `tagged'
+2019-08-17T22:25:22.459289+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `call'
+2019-08-17T22:25:22.459291+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+2019-08-17T22:25:22.459294+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/request_id.rb:27:in `call'
+2019-08-17T22:25:22.459296+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/rack-2.0.7/lib/rack/method_override.rb:22:in `call'
+2019-08-17T22:25:22.459298+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+2019-08-17T22:25:22.459300+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.3/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+2019-08-17T22:25:22.459302+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+2019-08-17T22:25:22.459305+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/static.rb:127:in `call'
+2019-08-17T22:25:22.459307+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+2019-08-17T22:25:22.459309+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/railties-5.2.3/lib/rails/engine.rb:524:in `call'
+2019-08-17T22:25:22.459311+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+2019-08-17T22:25:22.459313+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+2019-08-17T22:25:22.459315+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+2019-08-17T22:25:22.459321+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+2019-08-17T22:25:22.459323+00:00 app[web.1]: [ed328aab-4a75-4c69-ad61-c2d38f0c764b] vendor/bundle/ruby/2.5.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+2019-08-17T22:25:23.177168+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=nomster-laur-darmien.herokuapp.com request_id=55186471-0bf8-4841-be30-8fa9dd55f46b fwd="76.14.16.242" dyno=web.1 connect=0ms service=1ms status=200 bytes=143 protocol=https
+2019-08-17T22:31:57.000000+00:00 app[api]: Build started by user n3v3r8g81n@gmail.com
+2019-08-17T22:32:25.168559+00:00 heroku[web.1]: Restarting
+2019-08-17T22:32:25.174512+00:00 heroku[web.1]: State changed from up to starting
+2019-08-17T22:32:24.974072+00:00 app[api]: Deploy 741ccaa6 by user n3v3r8g81n@gmail.com
+2019-08-17T22:32:24.974072+00:00 app[api]: Release v52 created by user n3v3r8g81n@gmail.com
+2019-08-17T22:32:26.060316+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2019-08-17T22:32:26.061431+00:00 app[web.1]: === puma shutdown: 2019-08-17 22:32:26 +0000 ===
+2019-08-17T22:32:26.061436+00:00 app[web.1]: - Goodbye!
+2019-08-17T22:32:26.061545+00:00 app[web.1]: Exiting
+2019-08-17T22:32:26.046720+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2019-08-17T22:32:26.222177+00:00 heroku[web.1]: Process exited with status 143
+2019-08-17T22:32:28.744570+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 19018 -e production`
+2019-08-17T22:32:29.000000+00:00 app[api]: Build succeeded
+2019-08-17T22:32:34.667152+00:00 heroku[web.1]: State changed from starting to up
